@@ -79,7 +79,7 @@ class Installer extends \Opencart\System\Engine\Controller {
 		$this->load->model('setting/extension');
 
 		// Look for any new extensions
-		$files = glob(DIR_STORAGE . 'marketplace/*.ocmod.zip');
+		$files = glob(DIR_STORAGE . 'marketplace/'.'*.ocmod.zip');
 
 		foreach ($files as $file) {
 			$code = basename($file, '.ocmod.zip');
@@ -539,7 +539,7 @@ class Installer extends \Opencart\System\Engine\Controller {
 			// Generate php autoload file
 			$code = '<?php' . "\n";
 
-			$files = glob(DIR_STORAGE . 'vendor/*/*/composer.json');
+			$files = glob(DIR_STORAGE . 'vendor/'.'*/'.'*/composer.json');
 
 			foreach ($files as $file) {
 				$output = json_decode(file_get_contents($file), true);
